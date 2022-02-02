@@ -2,7 +2,7 @@ import sys
 from math import sin, cos, acos, radians
 from yandex_requests import *
 
-place = sys.argv[1]
+place = ''.join(sys.argv[1:])
 earth_radius = 6371210
 geocoder_params = {
     "geocode": place,
