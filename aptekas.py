@@ -4,7 +4,7 @@ from pprint import pprint
 from yandex_requests import *
 
 # place = sys.argv[1]
-place = 'Лицей 79, Набережные Челны'
+place = ''.join(sys.argv[1:])
 earth_radius = 6371210
 geocoder_params = {
     "geocode": place,
