@@ -1,5 +1,3 @@
-from typing import overload
-
 import requests
 
 
@@ -36,24 +34,16 @@ def GetGeoObjectsFromGeoCoderAPI(params):
     return response.json()
 
 
-# def NormalizeCoords(val):
-#     raise NotImplementedError
-
-
-def NormalizeCoords(coords:str) -> str:
+def NormalizeCoords(coords: str) -> str:
     if isinstance(coords, tuple) or isinstance(coords, list):
         coords = [str(coord) for coord in coords]
         return ','.join(coords)
     elif isinstance(coords, str):
         return coords.replace(' ', ',')
 
+
 def CreatePoints(points):
     return '~'.join([','.join(i) for i in points])
-
-
-
-
-
 
 
 def check_request(request):
